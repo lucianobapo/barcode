@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/info', function () {
-    return phpinfo();
+    if (config('app.debug')) return phpinfo();
+    else return 'Not in debug mode';
 });
 
 Route::get('/code', 'CodeController@show');

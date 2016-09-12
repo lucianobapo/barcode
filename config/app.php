@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Milon\Barcode\BarcodeServiceProvider::class,
+        Milon\Barcode\BarcodeServiceProvider::class,
 
         //
 
