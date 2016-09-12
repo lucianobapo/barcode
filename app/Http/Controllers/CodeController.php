@@ -16,7 +16,7 @@ class CodeController extends Controller
     public function code(Request $request)
     {
 //        dd($request->all());
-        dd(\DNS1D::getBarcodePNG($request->all()['code'], "EAN13",1));
+//        dd(\DNS1D::getBarcodePNG($request->all()['code'], "EAN13",1));
         return view('code')->with([
             'code' => \DNS1D::getBarcodePNG($request->all()['code'], "EAN13",1),
 //            'code' => $request->all()['code'],
