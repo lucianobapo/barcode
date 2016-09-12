@@ -22,7 +22,7 @@
                             <label for="code" class="col-md-4 control-label">Number for code:</label>
 
                             <div class="col-md-6">
-                                <input id="code" type="text" class="form-control" name="code" value="{{ old('code') }}" required autofocus>
+                                <input id="code" type="text" minlength="12" maxlength="12" class="form-control" name="code" value="{{ old('code') }}" required autofocus>
 
                                 @if ($errors->has('code'))
                                     <span class="help-block">
