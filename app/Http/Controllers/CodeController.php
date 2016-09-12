@@ -15,12 +15,10 @@ class CodeController extends Controller
 
     public function code(Request $request)
     {
-//        dd($request->all());
-//        dd(\DNS1D::getBarcodePNG($request->all()['code'], "EAN13",1));
+        $requestData = $request->all();
         return view('code')->with([
-            'code' => \DNS1D::getBarcodePNG($request->all()['code'], "EAN13",1),
-//            'code' => $request->all()['code'],
+            'code' => $requestData['code'],
+            'codeImage' => \DNS1D::getBarcodePNG($requestData['code'], "EAN13",1),
         ]);
-//        return \DNS1D::getBarcodeHTML($request->all()['code'], "EAN13");
     }
 }
