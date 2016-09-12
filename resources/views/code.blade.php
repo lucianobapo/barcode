@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     @if(isset($code))
                         <div class="well">
-                            <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($code, "EAN13",1) }}" alt="barcode"/>
+                            <img src="data:image/png;base64,{{ $code }}" alt="barcode"/>
                             <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">{{ $code }}</div>
 {{--                            {!! DNS1D::getBarcodeHTML($code, "EAN13") !!}--}}
                         </div>
