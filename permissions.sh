@@ -82,3 +82,17 @@ find storage/proxies/ -type d -exec chmod g+s {} \;
 
 setfacl -dR -m u::rwx storage/proxies/
 setfacl -dR -m g::rwx storage/proxies/
+
+#fix to milon/barcode files
+chgrp www-data -R storage/app/
+chmod -R ug+w storage/app/
+chmod -R o-w storage/app/
+
+find storage/app/ -type f -exec chmod ugo-x {} \;
+find storage/app/ -type d -exec chmod ugo+x {} \;
+
+find storage/app/ -type f -exec chmod g-s {} \;
+find storage/app/ -type d -exec chmod g+s {} \;
+
+setfacl -dR -m u::rwx storage/app/
+setfacl -dR -m g::rwx storage/app/
